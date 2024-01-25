@@ -63,7 +63,8 @@ if (typeof scriptHasRun === "undefined") {
         targetElement.style.backgroundColor = popupOverlayColor;
 
         // Set popup container's max-height.
-        targetElement.querySelector(".ExGby").style.maxHeight = popupMaxHeight;
+        targetElement.querySelector(".elm_qJBugX").style.maxHeight =
+            popupMaxHeight;
 
         // Add classes based on the popup type.
         if (popupType !== "default") {
@@ -119,7 +120,7 @@ if (typeof scriptHasRun === "undefined") {
             targetElement.classList.add("prevent-close");
 
             // Find all the close icons/buttons.
-            var closeButtons = targetElement.querySelectorAll(".AYaOY");
+            var closeButtons = targetElement.querySelectorAll(".elm_UOkrrN");
 
             closeButtons.forEach((closeButton) => {
                 // On click of close icons/buttons, close the popup.
@@ -136,11 +137,11 @@ if (typeof scriptHasRun === "undefined") {
             if (popupPosition === "centered") {
                 if (targetElement.getAttribute("data-popup-max-height")) {
                     // Set the provided value as popup's max-height.
-                    targetElement.querySelector(".ExGby").style.maxHeight =
+                    targetElement.querySelector(".elm_qJBugX").style.maxHeight =
                         popupMaxHeight;
                 } else {
                     // Else set 500px as popup's max-height.
-                    targetElement.querySelector(".ExGby").style.maxHeight =
+                    targetElement.querySelector(".elm_qJBugX").style.maxHeight =
                         "500px";
                 }
             }
@@ -210,7 +211,8 @@ if (typeof scriptHasRun === "undefined") {
             targetElement.classList.add("toggle-width-popup");
 
             // Get popup content's container.
-            var popupContentContainer = targetElement.querySelector(".TImJU");
+            var popupContentContainer =
+                targetElement.querySelector(".elm_wdBhkC");
 
             // if popup content's container exist
             if (popupContentContainer) {
@@ -271,10 +273,10 @@ if (typeof scriptHasRun === "undefined") {
 
             // If the user is currently not dragging.
             if (!isDragging) {
-                // If clicked on popup overlay (DuKSh) or close button(AYaOY).
+                // If clicked on popup overlay (elm_UoRWYY) or close button(elm_UOkrrN).
                 if (
-                    e.target.classList.contains("DuKSh") ||
-                    e.target.classList.contains("AYaOY")
+                    e.target.classList.contains("elm_UoRWYY") ||
+                    e.target.classList.contains("elm_UOkrrN")
                 ) {
                     // If current popup is over another popup stop event bubbling.
                     if (popupOverPopup) {
@@ -282,25 +284,26 @@ if (typeof scriptHasRun === "undefined") {
                     }
                     closePopup(targetElement);
                     targetElement.classList.remove("opened");
-                    // Check if the clicked element's parent is either the popup overlay (DuKSh) or a close button (AYaOY).
+                    // Check if the clicked element's parent is either the popup overlay (elm_UoRWYY) or a close button (elm_UOkrrN).
                 } else if (
-                    e.target.closest(".DuKSh") ||
-                    e.target.closest(".AYaOY")
+                    e.target.closest(".elm_UoRWYY") ||
+                    e.target.closest(".elm_UOkrrN")
                 ) {
                     e.stopPropagation(); // Prevent the click event from propagating to the parent div.
                 }
             }
         });
 
-        // Close the popup when clicking on elements with class 'AYaOY(close buttons)'.
-        const closeButtonElements = targetElement.querySelectorAll(`.AYaOY`);
+        // Close the popup when clicking on elements with class 'elm_UOkrrN(close buttons)'.
+        const closeButtonElements =
+            targetElement.querySelectorAll(`.elm_UOkrrN`);
         closeButtonElements.forEach(function (element) {
             element.addEventListener("click", function () {
                 // prevent popup from closing if has the class 'prevent-close'.
                 if (targetElement.classList.contains("prevent-close")) {
                     return;
                 }
-                closePopup(element.closest(".DuKSh"));
+                closePopup(element.closest(".elm_UoRWYY"));
             });
         });
     }
@@ -319,7 +322,8 @@ if (typeof scriptHasRun === "undefined") {
                 // Show the current popup.
                 element.style.visibility = "visible";
                 // Get the parent popup of the current popup.
-                const parentPopup = element.parentElement.closest(".DuKSh");
+                const parentPopup =
+                    element.parentElement.closest(".elm_UoRWYY");
                 // Add class 'has-child-popup' to the parent popup.
                 parentPopup.classList.add("has-child-popup");
             }
@@ -369,7 +373,7 @@ if (typeof scriptHasRun === "undefined") {
             // Hide the current popup.
             element.style.visibility = "hidden";
             // Get the parent popup of the current popup.
-            const parentPopup = element.parentElement.closest(".DuKSh");
+            const parentPopup = element.parentElement.closest(".elm_UoRWYY");
             // Remove class from the parent popup.
             parentPopup.classList.remove("has-child-popup");
         }
@@ -389,7 +393,7 @@ if (typeof scriptHasRun === "undefined") {
     // Function to show popup full width view mode.
     function showFullWidthPopup(event) {
         // Add class to the popup for styling.
-        const popup = event.currentTarget.closest(".DuKSh");
+        const popup = event.currentTarget.closest(".elm_UoRWYY");
         if (popup) {
             popup.classList.add("full-width");
         }
@@ -398,7 +402,7 @@ if (typeof scriptHasRun === "undefined") {
     // Function to show popup normal width view mode.
     function showNormalWidthPopup(event) {
         // Add class to the popup for styling.
-        const popup = event.currentTarget.closest(".DuKSh");
+        const popup = event.currentTarget.closest(".elm_UoRWYY");
         if (popup) {
             popup.classList.remove("full-width");
         }
@@ -480,7 +484,7 @@ if (typeof scriptHasRun === "undefined") {
                 clearTimeout(timeoutId);
             }
 
-            // Get the popup overlay (.DukSh).
+            // Get the popup overlay (.elm_UoRWYY).
             const popup = document.querySelector(`${e.detail.target}`);
 
             // Set popup element's container variable.
@@ -496,9 +500,9 @@ if (typeof scriptHasRun === "undefined") {
                 );
             }
 
-            // If elements-container is not found or popup type is not scroll or slidein, set 'ExGby' as popup container.
+            // If elements-container is not found or popup type is not scroll or slidein, set 'elm_qJBugX' as popup container.
             if (!popupElementsContainer) {
-                popupElementsContainer = popup.querySelector(".ExGby");
+                popupElementsContainer = popup.querySelector(".elm_qJBugX");
             }
 
             // Set a new delay for certain actions.
@@ -582,7 +586,7 @@ if (typeof scriptHasRun === "undefined") {
         });
 
         // Close single menu dropdown on closing of any popup.
-        const popups = document.querySelectorAll(".DuKSh");
+        const popups = document.querySelectorAll(".elm_UoRWYY");
         // Loop through all the popups.
         popups.forEach((popup) => {
             // On click of popup.
