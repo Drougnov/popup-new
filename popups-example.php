@@ -1,3 +1,14 @@
+<?php
+/**
+ * Template part: Popup Example
+ *
+ * These parameters are declared before calling the template:
+ * @param string $fansocial_role The role associated with the social fan.
+ * @param int    $user_id        The ID of the user.
+ */
+?>
+
+
 <!-- popup-stylesheet & script -->
 <link rel="stylesheet" href="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/css/dev/popup.css">
 <script src="https://fs.codelinden.com/wp-content/plugins/fansocial/assets/js/dev/popup.js"></script>
